@@ -1,14 +1,3 @@
-FROM node:18
-
-WORKDIR /app
-
-RUN apt-get update && apt-get install -y git
-
-RUN git clone https://github.com/Mintplex-Labs/anything-llm.git .
-
-RUN npm install
-RUN npm run build
+FROM mintplexlabs/anythingllm:latest
 
 EXPOSE 3001
-
-CMD ["npm", "start"]
